@@ -30,6 +30,7 @@ How to Run:
 
 
 CFD Solver:
+
 A simple finite difference method is implemented to solve the same cavity flow problem at Re = 100.
 The solver computes:
 1.  u(x,y),v(x,y)
