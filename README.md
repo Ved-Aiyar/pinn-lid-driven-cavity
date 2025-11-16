@@ -56,11 +56,9 @@ Relative L2 error (v): 9.06e-01
 
 Figures:
 
-![PINN Error Tracking](training_history.png)
+![Error/Loss Tracking](training_history.png)
 ![Velocity Magnitude Comparison](velocity_magnitude_cfd_vs_pinn.png)
 
 
 Importance:
 Demonstrates ML + CFD integration, PINN accuracy, and numerical methods.
-
-
