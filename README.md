@@ -3,6 +3,7 @@
 This project implements a Physics-Informed Neural Network (PINN) to solve the 2D incompressible Navier–Stokes equations for the lid-driven cavity flow benchmark problem.
 To validate the PINN’s accuracy, results are compared with a Finite Difference Method (FDM) CFD solver implemented separately.
 
+Status: Educational/Academic demo – not intended as a production CFD solver.
 
 Key Features:
 -   PINN architecture for solving Navier–Stokes equations
@@ -22,6 +23,15 @@ Boundary conditions for the unit cavity:
 2. Other walls: u=0,v=0
 
 
+Installation:
+
+git clone https://github.com/Ved-Aiyar/pinn-lid-driven-cavity.git
+cd pinn-lid-driven-cavity
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
+
 How to Run:
 1.  Create virtual environment
 2.  Install dependencies
@@ -39,5 +49,18 @@ The solver computes:
 4.  Stored in .npz format under cfd/results/  
 
 
+Results:
+Relative L2 error (u): 3.33e-01
+Relative L2 error (v): 9.06e-01
+
+
+Figures:
+
+![PINN Error Tracking](training_history.png)
+![Velocity Magnitude Comparison](velocity_magnitude_cfd_vs_pinn.png)
+
+
 Importance:
 Demonstrates ML + CFD integration, PINN accuracy, and numerical methods.
+
+

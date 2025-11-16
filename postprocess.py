@@ -13,7 +13,7 @@ CHECKPOINT_DIR = os.path.join(HERE, "checkpoints")
 CHECKPOINT_PATH = os.path.join(CHECKPOINT_DIR, "pinn_ns_cavity.pth")
 HISTORY_PATH = os.path.join(CHECKPOINT_DIR, "training_history.pth")
 CFD_RESULTS_PATH = os.path.join(HERE, "cfd", "results", "cavity_Re100.npz")
-
+FIG_DIR = os.path.join(HERE, "figures")
 
 # -------------------------
 #  Model loading utilities
@@ -127,6 +127,10 @@ def plot_training_history():
     plt.tight_layout()
 
 
+    # Save figure
+    plt.savefig(os.path.join(FIG_DIR, "training_history.png"), dpi=300)
+
+
 # -------------------------
 #  Vorticity computation
 # -------------------------
@@ -204,6 +208,9 @@ def plot_centerline_comparison(x, y, u_cfd, v_cfd, U_pinn, V_pinn):
 
     plt.tight_layout()
 
+    # Save figure
+    plt.savefig(os.path.join(FIG_DIR, "centerline_comparison.png"), dpi=300)
+
 
 # -------------------------
 #  Velocity magnitude comparison
@@ -237,6 +244,9 @@ def plot_velocity_magnitude_comparison(x, y, u_cfd, v_cfd, U_pinn, V_pinn):
     plt.gca().set_aspect("equal")
 
     plt.tight_layout()
+
+    # Save figure
+    plt.savefig(os.path.join(FIG_DIR, "velocity_magnitude_cfd_vs_pinn.png"), dpi=300)
 
 
 # -------------------------
@@ -312,12 +322,20 @@ def plot_error_fields(x, y, u_cfd, v_cfd, U_pinn, V_pinn):
 
     plt.tight_layout()
 
+    
+    # Save figure
+    plt.savefig(os.path.join(FIG_DIR, "error_fields_uv.png"), dpi=300)
+
 
 # -------------------------
 #  Main
 # -------------------------
 
 def main():
+
+    # Make sure figures directory exists
+    os.makedirs(FIG_DIR, exist_ok=True)
+
     # 1) Load PINN and CFD
     model = load_trained_model()
     x, y, u_cfd, v_cfd, p_cfd = load_cfd_results()
