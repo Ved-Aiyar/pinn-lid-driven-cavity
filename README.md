@@ -26,11 +26,11 @@ Boundary conditions for the unit cavity:
 
 Installation:
 
-git clone https://github.com/Ved-Aiyar/pinn-lid-driven-cavity.git
-cd pinn-lid-driven-cavity
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
+1. git clone https://github.com/Ved-Aiyar/pinn-lid-driven-cavity.git
+2. cd pinn-lid-driven-cavity
+3. python -m venv .venv
+4. .venv\Scripts\activate
+5. pip install -r requirements.txt
 
 
 How to Run:
