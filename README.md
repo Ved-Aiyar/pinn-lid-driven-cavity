@@ -18,6 +18,7 @@ Mathematical Formulation:
 The PINN solves the steady 2D incompressible Navier–Stokes equations.
 1. ∇⋅u=0
 2. (u⋅∇)u=−∇p+ν∇2u
+
 Boundary conditions for the unit cavity:
 1. Lid (top wall): u=1,v=0
 2. Other walls: u=0,v=0
